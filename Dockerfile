@@ -1,4 +1,4 @@
-FROM stackbrew/ubuntu:13.10
+FROM angelrr7702/ubuntu-13.10-sshd
 #Thanks to https://github.com/bydavy/docker-plex/blob/master/Dockerfile and https://github.com/aostanin/docker-plex/blob/master/Dockerfile
 MAINTAINER Tim Haak <tim@haak.co.uk>
 RUN apt-get -q update
@@ -21,6 +21,6 @@ VOLUME /data
 ADD ./start.sh /start.sh
 RUN chmod u+x  /start.sh
 
-EXPOSE 32400
+EXPOSE 32400 22
 
 ENTRYPOINT ["/start.sh"]
